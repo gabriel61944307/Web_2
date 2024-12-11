@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Meu Documento</title>
+    <!-- Referência para a folha de estilo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="cabecalho">
+        <img src="imagens/logo.png" onclick="location.href='index.html'" alt="Logo Avalia Docente"/>
+    </header>
+    <div class="flexCentralizado" style="flex-direction: column;">
+        <a style="padding: 10px;">Avaliando o professor Teste</a>
+        
+        <div id="formsAvaliacao" class="flexCentralizado">
+            <div class="linhaAvaliacao">
+                <div>Didática</div>
+                <div class="estrelas">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            <div class="linhaAvaliacao">
+                <div>Disposição em tirar duvidas</div>
+                <div class="estrelas">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            <div class="linhaAvaliacao">
+                <div>Metodologia de avaliações</div>
+                <div class="estrelas">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            <div class="linhaAvaliacao">
+                <div>Coerência com conteúdo cobrado</div>
+                <div class="estrelas">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            <div class="linhaAvaliacao">
+                <div>Coerência na correção</div>
+                <div class="estrelas">
+                    <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+                </div>
+            </div>
+            <div class="linhaAvaliacao">
+                <div>Cobra presença?</div>
+                <div>
+                    <div>SIM</div>
+                    <div>NÃO</div>
+                </div>
+            </div>
+        </div>
+        <div id="campos-escritos" class="flexCentralizado">
+            <div class="campo-escrito">
+                <p>Comentário sobre o professor</p>
+                <textarea name="comentario" id="comentario"></textarea>
+            </div>
+            <div class="campo-escrito">
+                <p>Adicionar disciplinas ao professor (1 por linha)</p>
+                <textarea name="add-disciplina" id="add-disciplina"></textarea>
+            </div>
+        </div>
+        <button type="button">Enviar</button>
+    </div>
+</body>
+</html>

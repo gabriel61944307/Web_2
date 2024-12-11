@@ -13,9 +13,15 @@
     padding-bottom: 5px;
 }
 
-#cabecalho > *{
+#cabecalho a {
+    display: block;
+    max-height: 100%;
+}
+
+#cabecalho img{
     max-height: 100%;
     object-fit: contain;
+    cursor: pointer;
 }
 
 .container-pesquisa{
@@ -64,6 +70,29 @@
 
 .custom-button:hover {
     background-color: #FF8C00;
+}
+
+.flexCentralizado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#formsAvaliacao {
+    flex-direction: column;
+}
+
+.linhaAvaliacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 40vw;
+}
+#campos-escritos{
+    display: flex;
+    justify-content: space-between;
 }
 
 @media (max-width: 680px){
