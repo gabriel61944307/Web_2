@@ -30,11 +30,11 @@
 .custom-input {
     width: 50vw;
     max-width: 800px;
+    min-width: 180px;
     height: 8vh;
     padding: 10px;
     margin: 10px 0;
     font-size: 1.5rem;
-    font-weight: bold;
     border: 2px solid #ccc;
     border-radius: 8px;
     text-align: center;
@@ -60,10 +60,15 @@
     border-radius: 8px;
     padding: 10px 20px;
     font-size: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .custom-button:hover {
     background-color: #FF8C00;
+}
+
+@media (max-width: 680px){
+    .button-group{
+        flex-direction: column;
+        gap: 10px
+    }
 }
