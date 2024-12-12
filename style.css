@@ -80,6 +80,7 @@
 
 #formsAvaliacao {
     flex-direction: column;
+    gap: 10px;
 }
 
 .linhaAvaliacao{
@@ -90,9 +91,62 @@
     padding-right: 10px;
     width: 40vw;
 }
-#campos-escritos{
+
+.sim-nao-container{
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+}
+
+.estrelas{
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+}
+
+.add-disciplina{
+    width: 200px;
+}
+
+#campos-escritos{
+    display: flex;
+    flex-direction: column;
+    padding: 5vh 0vw;
+}
+
+.cabecalho-campos-escritos{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cabecalho-campos-escritos > div{
+    font-size: large;
+    width: 19vw;
+}
+
+#comentario, #add-disciplina{
+    width: 19vw;
+    height: 20vh;
+}
+
+.form-submit-button {
+    background: #0066A2;
+    color: white;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold15px arial,sans-serif;
+    text-shadow: none;
+    border-radius: 10px;
+}
+.form-submit-button:hover {
+background: #016ABC;
+color: #fff;
+border: 1px solid #eee;
+box-shadow: 5px 5px 5px #eee;
+text-shadow: none;
+cursor: pointer;
 }
 
 @media (max-width: 680px){
