@@ -94,13 +94,20 @@
 
 .sim-nao-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: left;
     gap: 30px;
+    width: 20px;
+    height: 20px;
+}
+
+.sim-nao-container > img{
+    width: 20px;
+    height: 20px;
 }
 
 .estrelas{
     display: flex;
-    justify-content: right;
+    justify-content: left;
     gap: 5px;
 }
 
@@ -153,5 +160,12 @@ cursor: pointer;
     .button-group{
         flex-direction: column;
         gap: 10px
+    }
+
+    .linhaAvaliacao{
+        flex-direction: column;
+    }
+    .estrelas{
+        justify-content: center;
     }
 }
