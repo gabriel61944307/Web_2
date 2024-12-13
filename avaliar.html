@@ -15,7 +15,7 @@
     <div class="flexCentralizado" style="flex-direction: column; padding: 10vh 10vw;">
         <a style="padding: 10px;">Avaliando o professor Teste</a>
         
-        <div id="formsAvaliacao" class="flexCentralizado">
+        <div id="forms-avaliacao">
             <div class="linhaAvaliacao">
                 <div>Didática</div>
                 <div class="estrelas">
@@ -69,22 +69,17 @@
             <div class="linhaAvaliacao">
                 <div>Cobra presença?</div>
                 <div class="sim-nao-container">
-                    <img src="imagens/sim.png">
-                    <img src="imagens/nao.png">
+                    <img class="sim-nao" src="imagens/sim.png">
+                    <img class="sim-nao" src="imagens/nao.png">
                 </div>
             </div>
         </div>
         <div id="campos-escritos">
-            <div class="cabecalho-campos-escritos">
-                <div>Comentário sobre o professor</div>
-                <div>Adicionar disciplinas ao professor (1 por linha)</div>
-            </div>
-            <div class="textareas" class="flexCentralizado">
-                <textarea name="comentario" id="comentario"></textarea>
-                <textarea name="add-disciplina" id="add-disciplina"></textarea>
-            </div>
+            <textarea name="comentario" id="comentario" placeholder="Avaliação do professor"></textarea>
+            <textarea name="add-disciplina" id="add-disciplina" placeholder="Adicionar disciplinas ao professor (1 por linha)"></textarea>
         </div>
         <button type="button" class="form-submit-button">Enviar</button>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

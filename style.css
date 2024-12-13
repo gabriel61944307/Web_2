@@ -74,12 +74,14 @@
 
 .flexCentralizado {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
-#formsAvaliacao {
-    flex-direction: column;
+#forms-avaliacao {
     gap: 10px;
 }
 
@@ -87,15 +89,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-left: 10px;
-    padding-right: 10px;
-    width: 40vw;
+    padding: 5px;
+    width: 50vw;
+    background-color: #f2f2f2;
+    border-radius: 10px; /* Arredonda os cantos */
+    margin-bottom: 10px; /* Espaçamento entre as linhas */
 }
 
 .sim-nao-container{
     display: flex;
-    justify-content: left;
-    gap: 30px;
+    justify-content: right;
+    gap: 60px;
     width: 20px;
     height: 20px;
 }
@@ -107,8 +111,24 @@
 
 .estrelas{
     display: flex;
-    justify-content: left;
+    justify-content: right;
     gap: 5px;
+}
+
+.estrelas img, .sim-nao{
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.estrelas img:hover {
+    transform: scale(1.2);
+}
+
+.amarela {
+    filter: brightness(0) saturate(100%) invert(62%) sepia(88%) saturate(745%) hue-rotate(3deg) brightness(104%) contrast(102%);
+}
+.verde {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(68%) saturate(651%) hue-rotate(92deg) brightness(92%) contrast(85%);
+    transition: 0.3s ease; /* Suaviza a transição */
 }
 
 .add-disciplina{
@@ -116,24 +136,27 @@
 }
 
 #campos-escritos{
+    width: 50vw;
     display: flex;
-    flex-direction: column;
-    padding: 5vh 0vw;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 5vh 0;
 }
 
-.cabecalho-campos-escritos{
-    display: flex;
-    justify-content: space-between;
-}
-
-.cabecalho-campos-escritos > div{
-    font-size: large;
-    width: 19vw;
-}
-
-#comentario, #add-disciplina{
-    width: 19vw;
+textarea {
+    width: 100%;
     height: 20vh;
+
+    padding: 10px;
+    border: 1px solid #ccc; /* Define uma borda neutra */
+    border-radius: 8px; /* Deixa as bordas arredondadas */
+    background-color: #f9f9f9; /* Fundo leve e suave */
+    font-size: 16px; /* Tamanho da fonte */
+    font-family: 'Arial', sans-serif; /* Fonte limpa */
+    line-height: 1.5; /* Melhora a leitura */
+    color: #333; /* Texto em um cinza escuro */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
 }
 
 .form-submit-button {
@@ -167,5 +190,11 @@ cursor: pointer;
     }
     .estrelas{
         justify-content: center;
+    }
+    .sim-nao-container{
+        justify-content: center;
+    }
+    #campos-escritos{
+        flex-direction: column;
     }
 }
