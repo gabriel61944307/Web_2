@@ -66,6 +66,7 @@
     border-radius: 8px;
     padding: 10px 20px;
     font-size: 1.5rem;
+    cursor: pointer;
 }
 
 .custom-button:hover {
@@ -157,26 +158,6 @@ textarea {
     line-height: 1.5; /* Melhora a leitura */
     color: #333; /* Texto em um cinza escuro */
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
-}
-
-.form-submit-button {
-    background: #0066A2;
-    color: white;
-    border-style: outset;
-    border-color: #0066A2;
-    height: 50px;
-    width: 100px;
-    font: bold15px arial,sans-serif;
-    text-shadow: none;
-    border-radius: 10px;
-}
-.form-submit-button:hover {
-background: #016ABC;
-color: #fff;
-border: 1px solid #eee;
-box-shadow: 5px 5px 5px #eee;
-text-shadow: none;
-cursor: pointer;
 }
 
 @media (max-width: 680px){

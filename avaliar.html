@@ -12,8 +12,8 @@
     <header id="cabecalho">
         <img src="imagens/logo.png" onclick="location.href='index.html'" alt="Logo Avalia Docente"/>
     </header>
-    <div class="flexCentralizado" style="flex-direction: column; padding: 10vh 10vw;">
-        <a style="padding: 10px;">Avaliando o professor Teste</a>
+    <div class="flexCentralizado" style="flex-direction: column;">
+        <a style="padding: 20px; font-weight: bold; font-size: large;">Avaliando o professor Teste</a>
         
         <div id="forms-avaliacao">
             <div class="linhaAvaliacao">
@@ -78,7 +78,7 @@
             <textarea name="comentario" id="comentario" placeholder="Avaliação do professor"></textarea>
             <textarea name="add-disciplina" id="add-disciplina" placeholder="Adicionar disciplinas ao professor (1 por linha)"></textarea>
         </div>
-        <button type="button" class="form-submit-button">Enviar</button>
+        <button type="button" class="custom-button" onclick="location.reload();">Enviar</button>
     </div>
     <script src="script.js"></script>
 </body>
