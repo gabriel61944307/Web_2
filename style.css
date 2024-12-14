@@ -93,8 +93,8 @@
     padding: 5px;
     width: 50vw;
     background-color: #f2f2f2;
-    border-radius: 10px; /* Arredonda os cantos */
-    margin-bottom: 10px; /* Espaçamento entre as linhas */
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
 .sim-nao-container{
@@ -129,7 +129,7 @@
 }
 .verde {
     filter: brightness(0) saturate(100%) invert(45%) sepia(68%) saturate(651%) hue-rotate(92deg) brightness(92%) contrast(85%);
-    transition: 0.3s ease; /* Suaviza a transição */
+    transition: 0.3s ease;
 }
 
 .add-disciplina{
@@ -150,14 +150,14 @@ textarea {
     height: 20vh;
 
     padding: 10px;
-    border: 1px solid #ccc; /* Define uma borda neutra */
-    border-radius: 8px; /* Deixa as bordas arredondadas */
-    background-color: #f9f9f9; /* Fundo leve e suave */
-    font-size: 16px; /* Tamanho da fonte */
-    font-family: 'Arial', sans-serif; /* Fonte limpa */
-    line-height: 1.5; /* Melhora a leitura */
-    color: #333; /* Texto em um cinza escuro */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 #avaliacoes-gerais{
@@ -170,14 +170,19 @@ textarea {
 }
 
 .avaliacao-geral{
+    max-height: fit-content;
     background-color: #4a6086;
     border-radius: 10px;
     border: 2px solid black;
     padding: 10px;
 }
 
-#media{
-    flex-grow: 1;
+#media, #disciplinas{
+    flex-grow: 2;
+}
+
+#presenca{
+    flex-grow: 0.7;
 }
 
 .avaliacao{
