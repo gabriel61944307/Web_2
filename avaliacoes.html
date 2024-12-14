@@ -67,89 +67,121 @@
             </div>
         </div>
         <div id="avaliacoes-individuais">
-            <div class="cabecalho-avaliacoes" style="display: flex; justify-content: space-between;">
-                <a>Todas</a><a>Positivas</a><a>Negativas</a>
+            <div id="cabecalho-avaliacoes">
+                <div id="filtro-todas">Todas</div>
+                <div id="filtro-positivas">Positivas</div>
+                <div id="filtro-negativas">Negativas</div>
             </div>
-            <div class="avaliacao-individual" style="display: flex; width: 40vw;">
+            <div class="avaliacao-individual">
                 <div class="comentario-individual">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet tincidunt eros, nec tristique massa cursus at. Cras in volutpat risus, a venenatis ex. Ut tortor lacus, venenatis eget ligula et, ultricies efficitur ex. Integer porta, orci eu iaculis commodo, sapien sem lacinia mauris, vitae vulputate massa tellus et nulla. Curabitur lorem purus, euismod ac consequat sit amet, egestas tincidunt ante. Ut sagittis est sed quam imperdiet, quis rhoncus libero aliquet. In pretium orci ac lacus vehicula dignissim. Mauris eu ipsum enim. In vitae fermentum erat, in iaculis sem. Donec in ultrices nunc. Phasellus et euismod odio. Vestibulum sodales fringilla mi quis faucibus.
                 </div>
-                <div class="avaliacao-geral" style="width: 40vw;">
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Didática</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                <div id ="medias" class="avaliacao-geral" style="padding: 5px;">
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Didática</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 80%;">4.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Disposição em tirar duvidas</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Disposição em tirar duvidas</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 60%;">3.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Metodologia de avaliações</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Metodologia de avaliações</span>
+                        <div class="container-barra">
+                            <div class="barra-vermelha" style="width: 20%;">1.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Coerência com conteúdo cobrado</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Coerência com conteúdo cobrado</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 80%;">4.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Coerência na correção</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="avaliacao-individual" style="display: flex; width: 40vw;">
-                <div class="comentario-individual">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet tincidunt eros, nec tristique massa cursus at. Cras in volutpat risus, a venenatis ex. Ut tortor lacus, venenatis eget ligula et, ultricies efficitur ex. Integer porta, orci eu iaculis commodo, sapien sem lacinia mauris, vitae vulputate massa tellus et nulla. Curabitur lorem purus, euismod ac consequat sit amet, egestas tincidunt ante. Ut sagittis est sed quam imperdiet, quis rhoncus libero aliquet. In pretium orci ac lacus vehicula dignissim. Mauris eu ipsum enim. In vitae fermentum erat, in iaculis sem. Donec in ultrices nunc. Phasellus et euismod odio. Vestibulum sodales fringilla mi quis faucibus.
-                </div>
-                <div class="avaliacao-geral" style="width: 40vw;">
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Didática</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
-                    </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Disposição em tirar duvidas</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
-                    </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Metodologia de avaliações</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
-                    </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Coerência com conteúdo cobrado</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
-                    </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Coerência na correção</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Coerência na correção</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 100%;">5.0</div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="avaliacao-individual" style="display: flex; width: 40vw;">
+            <div class="avaliacao-individual">
                 <div class="comentario-individual">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet tincidunt eros, nec tristique massa cursus at. Cras in volutpat risus, a venenatis ex. Ut tortor lacus, venenatis eget ligula et, ultricies efficitur ex. Integer porta, orci eu iaculis commodo, sapien sem lacinia mauris, vitae vulputate massa tellus et nulla. Curabitur lorem purus, euismod ac consequat sit amet, egestas tincidunt ante. Ut sagittis est sed quam imperdiet, quis rhoncus libero aliquet. In pretium orci ac lacus vehicula dignissim. Mauris eu ipsum enim. In vitae fermentum erat, in iaculis sem. Donec in ultrices nunc. Phasellus et euismod odio. Vestibulum sodales fringilla mi quis faucibus.
                 </div>
-                <div class="avaliacao-geral" style="width: 40vw;">
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Didática</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                <div id ="medias" class="avaliacao-geral" style="padding: 5px;">
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Didática</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 80%;">4.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Disposição em tirar duvidas</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Disposição em tirar duvidas</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 60%;">3.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Metodologia de avaliações</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Metodologia de avaliações</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 100%;">5.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Coerência com conteúdo cobrado</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Coerência com conteúdo cobrado</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 80%;">4.0</div>
+                        </div>
                     </div>
-                    <div class="nota" style="display: flex; justify-content: space-between;">
-                        <a>Coerência na correção</a>
-                        <a style="white-space: nowrap; padding-left: 5px;">xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Coerência na correção</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 80%;">4.0</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="avaliacao-individual">
+                <div class="comentario-individual">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. In imperdiet tincidunt eros, nec tristique massa cursus at. Cras in volutpat risus, a venenatis ex. Ut tortor lacus, venenatis eget ligula et, ultricies efficitur ex. Integer porta, orci eu iaculis commodo, sapien sem lacinia mauris, vitae vulputate massa tellus et nulla. Curabitur lorem purus, euismod ac consequat sit amet, egestas tincidunt ante. Ut sagittis est sed quam imperdiet, quis rhoncus libero aliquet. In pretium orci ac lacus vehicula dignissim. Mauris eu ipsum enim. In vitae fermentum erat, in iaculis sem. Donec in ultrices nunc. Phasellus et euismod odio. Vestibulum sodales fringilla mi quis faucibus.
+                </div>
+                <div id ="medias" class="avaliacao-geral" style="padding: 5px;">
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Didática</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 100%;">5.0</div>
+                        </div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Disposição em tirar duvidas</span>
+                        <div class="container-barra">
+                            <div class="barra-vermelha" style="width: 14%;">1.0</div>
+                        </div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Metodologia de avaliações</span>
+                        <div class="container-barra">
+                            <div class="barra-vermelha" style="width: 46%;">2.0</div>
+                        </div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Coerência com conteúdo cobrado</span>
+                        <div class="container-barra">
+                            <div class="barra-verde" style="width: 80%;">3.0</div>
+                        </div>
+                    </div>
+                    <div class="avaliacao">
+                        <span class="titulo-nota">Coerência na correção</span>
+                        <div class="container-barra">
+                            <div class="barra-vermelha" style="width: 40%;">2.0</div>
+                        </div>
                     </div>
                 </div>
             </div>
