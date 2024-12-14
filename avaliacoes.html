@@ -12,50 +12,58 @@
     <header id="cabecalho">
         <img src="imagens/logo.png" onclick="location.href='index.html'" alt="Logo Avalia Docente"/>
     </header>
-    <div class="flexCentralizado" style="flex-direction: column; padding: 5vh 5vw;">
-        <a style="padding: 10px;">Avaliações do professor Teste</a>
+    <div class="flexCentralizado" style="flex-direction: column;">
+        <a style="padding: 20px; font-weight: bold; font-size: large;">Avaliações do professor Teste</a>
 
-        <div id="avaliacoes-gerais" class="flexCentralizado" style="justify-content: space-between;">
-            <div id ="avaliacao-geral" class="avaliacao-geral" style="padding: 5px;">
-                <div class="nota">
-                    <a>Didática</a>
-                    <a>xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+        <div id="avaliacoes-gerais">
+            <div id ="medias" class="avaliacao-geral" style="padding: 5px;">
+                <div class="avaliacao">
+                    <span class="titulo-nota">Didática</span>
+                    <div class="container-barra">
+                        <div class="barra-verde" style="width: 100%;">5.0</div>
+                    </div>
                 </div>
-                <div class="nota">
-                    <a>Disposição em tirar duvidas</a>
-                    <a>xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                <div class="avaliacao">
+                    <span class="titulo-nota">Disposição em tirar duvidas</span>
+                    <div class="container-barra">
+                        <div class="barra-vermelha" style="width: 14%;">0.7</div>
+                    </div>
                 </div>
-                <div class="nota">
-                    <a>Metodologia de avaliações</a>
-                    <a>xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                <div class="avaliacao">
+                    <span class="titulo-nota">Metodologia de avaliações</span>
+                    <div class="container-barra">
+                        <div class="barra-vermelha" style="width: 46%;">2.3</div>
+                    </div>
                 </div>
-                <div class="nota">
-                    <a>Coerência com conteúdo cobrado</a>
-                    <a>xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                <div class="avaliacao">
+                    <span class="titulo-nota">Coerência com conteúdo cobrado</span>
+                    <div class="container-barra">
+                        <div class="barra-verde" style="width: 80%;">4.0</div>
+                    </div>
                 </div>
-                <div class="nota">
-                    <a>Coerência na correção</a>
-                    <a>xxxxxxxxxxxxxxxxxxx____ 4,5</a>
+                <div class="avaliacao">
+                    <span class="titulo-nota">Coerência na correção</span>
+                    <div class="container-barra">
+                        <div class="barra-vermelha" style="width: 40%;">2.0</div>
+                    </div>
                 </div>
             </div>
-            <div id ="presenca" class="avaliacao-geral" style="padding: 5px;">
+            <div id ="presenca" class="avaliacao-geral">
                 <a>Cobra presença</a>
                 <div style="display: flex; justify-content: space-between;">
                     <img src="imagens/sim.png" alt="sim" style="width: 20px; height: 20px;">
                     <img src="imagens/nao.png" alt="nao" style="width: 20px; height: 20px;">
                 </div>
                 <div style="display: flex; justify-content: space-between;">
-                    <p>45</p>
-                    <p>12</p>
+                    <p style="font-weight: 900;">45</p>
+                    <p style="font-weight: 900;">12</p>
                 </div>
             </div>
-            <div id ="disciplinas" class="avaliacao-geral" style="padding: 5px;">
-                <a>Disciplinas</a>
-                <p>tESTE</p>
-                <p>tESTE</p>
-                <p>tESTE</p>
-                <p>tESTE</p>
-                <p>...</p>
+            <div id ="disciplinas" class="avaliacao-geral">
+                <div style="border-bottom: 2px solid #000000; margin-bottom: 10px;">Disciplinas</div>
+                <p>Mecânica da fantasia</p>
+                <p>Captação de carambola</p>
+                <p>Estudos de algoritmos gulosos para comer bolo</p>
             </div>
         </div>
         <div id="avaliacoes-individuais">
