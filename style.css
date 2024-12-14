@@ -297,4 +297,8 @@ textarea {
         flex: 1 1 calc(50% - 10px); /* Ajuste para 2 colunas */
         box-sizing: border-box;
     }
+
+    .comentario-individual{
+        font-size: medium;
+    }
 }
