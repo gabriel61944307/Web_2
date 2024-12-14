@@ -324,4 +324,7 @@ textarea {
     .sim-nao-container{
         justify-content: center;
     }
+    .barra-verde, .barra-vermelha{
+        font-size: 8px;
+    }
 }
