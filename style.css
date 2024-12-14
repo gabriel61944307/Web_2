@@ -287,6 +287,7 @@ textarea {
     }
     #campos-escritos{
         flex-direction: column;
+        width: 50vw;
     }
 
     #avaliacoes-gerais {
@@ -300,5 +301,27 @@ textarea {
 
     .comentario-individual{
         font-size: medium;
+    }
+}
+
+@media (min-width: 680px) and (max-width: 912px){
+    *{
+        font-size: large;
+    }
+    #forms-avaliacao{
+        width: 70vw;
+    }
+    #campos-escritos{
+        width: 70vw;
+    }
+    .linhaAvaliacao{
+        flex-direction: column;
+        width: 100%;
+    }
+    .estrelas{
+        justify-content: center;
+    }
+    .sim-nao-container{
+        justify-content: center;
     }
 }
