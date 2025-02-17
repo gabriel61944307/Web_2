@@ -1,5 +1,5 @@
-import Header from "./components/Header"
-import Pesquisa from "./components/Pesquisa"
+import Header from "../components/Header"
+import Pesquisa from "../components/Pesquisa"
 
 function Home(){
     return(

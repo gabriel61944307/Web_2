@@ -1,12 +1,14 @@
+import { useNavigate } from "react-router-dom";
 
 function Pesquisa(){
+    const navigate = useNavigate()
 
     function avaliacoesHandler(){
-        console.log("avaliacoesHandler");
+        navigate('/avaliacoes')
     }
 
     function avaliarHandler(){
-        console.log("avaliarHandler");
+        navigate('/avaliar')
     }
 
     return(
