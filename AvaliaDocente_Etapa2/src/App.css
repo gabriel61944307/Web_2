@@ -270,6 +270,42 @@ textarea {
     border-radius: 5px 5px 0px 0px;
 }
 
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* Ajuste conforme necessário */
+  }
+  
+  .sugestoes-lista {
+    position: absolute;
+    top: 100%; /* Posiciona a lista abaixo do input */
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000; /* Garante que a lista fique acima de outros elementos */
+    max-height: 200px; /* Altura máxima da lista */
+    overflow-y: auto; /* Adiciona scroll se necessário */
+  }
+  
+  .sugestao-item {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .sugestao-item:hover {
+    background-color: #f0f0f0; /* Efeito hover */
+  }
+  
+  .sugestao-item:last-child {
+    border-bottom: none; /* Remove a borda do último item */
+  }
+
 @media (max-width: 680px){
     .button-group{
         flex-direction: column;

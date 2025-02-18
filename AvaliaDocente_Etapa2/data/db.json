@@ -1,0 +1,53 @@
+{
+    "pesquisa":  [
+        {
+            "universidade" : "Universidade Federal de São Carlos",
+            "professores": ["Miyagi", "Gabriel Rodrigues Malaquias"]
+        },
+        {
+            "universidade" : "Universidade Federal do Paraná",
+            "professores": ["Miyagi"]
+        }
+    ],
+    "avaliacoes" : [
+        {
+            "nome": "Miyagi",
+            "universidade": "Universidade Federal de São Carlos",
+            "avaliacao": {
+                "didatica": 5,
+                "tirarDuvidas": 4,
+                "metodologia": 2,
+                "conteudo": 3,
+                "correcao": 4
+            },
+            "presenca" : true,
+            "comentario" : "Então, sobre o professor Miyagi, eu acho que ele manda muito bem na explicação. Ele tem uma didática ótima, sempre consegue deixar as coisas claras, mesmo quando o assunto é complicado. Dá pra perceber que ele entende muito do conteúdo e realmente se esforça pra passar isso pra gente. Mas, ao mesmo tempo, eu acho que ele poderia melhorar na parte de correção das provas. Às vezes, parece que os critérios não são tão claros, e isso deixa a gente meio perdido. Já aconteceu de respostas super parecidas serem avaliadas de forma diferente, sabe? Isso acaba desmotivando um pouco.No geral, acho que ele é um ótimo professor, mas esse ponto das correções deixa um pouco a desejar. Se ele ajustasse isso, seria perfeito!"
+        },
+        {
+            "nome": "Miyagi",
+            "universidade": "Universidade Federal do Paraná",
+            "avaliacao": {
+                "didatica": 1,
+                "tirarDuvidas": 1,
+                "metodologia": 1,
+                "conteudo": 1,
+                "correcao": 1
+            },
+            "presenca" : false,
+            "comentario" : "Ruim demais!!!"
+        },
+        {
+            "nome": "Gabriel Rodrigues Malaquias",
+            "universidade": "Universidade Federal de São Carlos",
+            "avaliacao": {
+                "didatica": 5,
+                "tirarDuvidas": 4,
+                "metodologia": 4,
+                "conteudo": 5,
+                "correcao": 1
+            },
+            "presenca" : false,
+            "comentario" : "Muito bom no geral, mas muito caneteiro."
+        }
+    ]
+}
