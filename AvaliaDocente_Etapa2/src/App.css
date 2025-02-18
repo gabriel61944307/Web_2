@@ -34,13 +34,13 @@
 
 /* Estilizando os Campos */
 .custom-input {
-    width: 50vw;
+    width: 100%;
     max-width: 800px;
     min-width: 180px;
     height: 8vh;
     padding: 10px;
     margin: 10px 0;
-    font-size: 1.5rem;
+    font-size: 100%;
     border: 2px solid #ccc;
     border-radius: 8px;
     text-align: center;
@@ -272,7 +272,7 @@ textarea {
 
 .input-container {
     position: relative;
-    width: 100%;
+    width: 80vw;
     max-width: 400px; /* Ajuste conforme necessário */
   }
   

@@ -46,6 +46,10 @@ function Pesquisa(){
         navigate('/avaliar')
     }
 
+    function adicionarHandler(){
+        console.log('ADICIONOU')
+    }
+
     const handleSugestaoClick = (nome) => {
         setUniversidade(nome);
         setMostrarSugestoes(false);
@@ -75,12 +79,15 @@ function Pesquisa(){
                     </ul>
                 )}
             </div>
-
-            <input type="text" id="docente" placeholder="Docente" className="custom-input"/>
+            
+            <div className="input-container">
+                <input type="text" id="docente" placeholder="Docente" className="custom-input"/>
+            </div>
 
             <div className="button-group">
                 <button type="button" onClick={avaliacoesHandler} className="custom-button">Avaliações</button>
                 <button type="button" onClick={avaliarHandler} className="custom-button">Avaliar</button>
+                <button type="button" onClick={adicionarHandler} className="custom-button">Adicionar</button>
             </div>
         </div>
     )
