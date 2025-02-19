@@ -76,11 +76,57 @@ function Pesquisa(){
     }, [universidade, docente, mostrarSugestoesDocente])
 
     function avaliacoesHandler(){
-        navigate('/avaliacoes', {state: {universidade, docente}});
+        fetch('http://localhost:3000/pesquisa', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro ao buscar opções de pesquisa');
+            }
+            return response.json();
+        })
+        .then((data) => {
+        if (data.find( elemento => elemento.universidade === universidade && elemento.professores.includes(docente))){
+            navigate('/avaliacoes', {state: {universidade, docente}});
+        }
+        else{
+            alert(`Universidade ${universidade} e/ou professor ${docente} não presentes na base de dados.`);
+            window.location.reload();
+        }
+        })
+        .catch((error) => {
+            alert(`Erro ao buscar sugestões: ${error.message}`);
+        });
     }
 
     function avaliarHandler(){
-        navigate('/avaliar', {state: {universidade, docente}});
+        fetch('http://localhost:3000/pesquisa', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8'
+            }
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro ao buscar opções de pesquisa');
+            }
+            return response.json();
+        })
+        .then((data) => {
+        if (data.find( elemento => elemento.universidade === universidade && elemento.professores.includes(docente))){
+            navigate('/avaliar', {state: {universidade, docente}});
+        }
+        else{
+            alert(`Universidade ${universidade} e/ou professor ${docente} não presentes na base de dados.`);
+            window.location.reload();
+        }
+        })
+        .catch((error) => {
+            alert(`Erro ao buscar sugestões: ${error.message}`);
+        });
     }
 
     const adicionarHandler = async () => {

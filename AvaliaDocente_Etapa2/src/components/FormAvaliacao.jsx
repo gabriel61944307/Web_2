@@ -67,30 +67,51 @@ function FormAvaliacao({ universidade, docente }) {
   };
 
   const enviarHandler = () => {
-    fetch('http://localhost:3000/avaliacoes', {
-      method: 'POST',
+    fetch('http://localhost:3000/pesquisa', {
+      method: 'GET',
       headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          "nome" : docente,
-          "universidade" : universidade,
-          "avaliacao" : estrelas,
-          "presenca" : cobraPresenca,
-          "comentario": comentarioRef.current.value,
-          "materias": materiasRef.current.value ? materiasRef.current.value.split('\n') : []
-      })
+        'Content-Type': 'application/json; charset=utf-8'
+      }
     })
     .then((response) => {
         if (!response.ok) {
-            throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
+            throw new Error('Erro ao buscar sugestões');
         }
         return response.json();
     })
+    .then((data) => {
+      if (data.find( elemento => elemento.universidade === universidade && elemento.professores.includes(docente))){
+        fetch('http://localhost:3000/avaliacoes', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+                "nome" : docente,
+                "universidade" : universidade,
+                "avaliacao" : estrelas,
+                "presenca" : cobraPresenca,
+                "comentario": comentarioRef.current.value,
+                "materias": materiasRef.current.value ? materiasRef.current.value.split('\n') : []
+            })
+          })
+          .then((response) => {
+              if (!response.ok) {
+                  throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
+              }
+              return response.json();
+          })
+          .catch((error) => {
+              console.error('Erro:', error);
+          });
+      }
+      else{
+        alert(`Universidade ${universidade} e/ou professor ${docente} não presentes na base de dados.`)
+      }
+    })
     .catch((error) => {
-        console.error('Erro:', error);
+        alert(`Erro ao buscar sugestões: ${error.message}`);
     });
-
   }
 
   return (

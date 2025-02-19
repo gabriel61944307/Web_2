@@ -199,6 +199,23 @@
       "presenca": false,
       "comentario": "Escadinha inversa pra testar os valores sem matérias ministradas",
       "materias": []
+    },
+    {
+      "id": "eec2",
+      "nome": "Lucas Silva e Silva",
+      "universidade": "Universidade Estadual de São Paulo",
+      "avaliacao": {
+        "didatica": 5,
+        "tirarDuvidas": 5,
+        "metodologia": 5,
+        "conteudo": 5,
+        "correcao": 5
+      },
+      "presenca": true,
+      "comentario": "Esse professor realmente sabe o que está ensinando e sabe como ensinar",
+      "materias": [
+        "Geografia dimensional"
+      ]
     }
   ]
 }
