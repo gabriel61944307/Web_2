@@ -38,7 +38,7 @@ function Pesquisa(){
             setSugestoesUniversidades(nomesUniversidades.filter(elemento => elemento.toUpperCase().includes(universidade.trim().toUpperCase())));
         })
         .catch((error) => {
-            console.error('Erro ao buscar sugestões:', error);
+            alert(`Erro ao buscar sugestões: ${error.message}`);
         });
     }, [universidade, mostrarSugestoesUniversidade]);
 
@@ -70,7 +70,7 @@ function Pesquisa(){
             }
         })
         .catch((error) => {
-            console.error('Erro ao buscar sugestões:', error);
+            alert(`Erro ao buscar sugestões: ${error.message}`);
         });
 
     }, [universidade, docente, mostrarSugestoesDocente])
@@ -110,14 +110,15 @@ function Pesquisa(){
                         if (!response.ok) {
                             throw new Error(`Erro ao adicionar o professor(a) ${docente} a universidade ${universidade}`);
                         }
+                        alert("Adição de universidade/dicente bem sucedida.")
                         return response.json();
                     })
                     .catch((error) => {
-                        console.error(error)
+                        alert(`${error.message}`)
                     });
                 }
                 else{
-                    console.log(`Professor ${docente} já presente na universidade ${universidade}`)
+                    alert(`Professor ${docente} já presente na universidade ${universidade}`)
                 }
             }
             else{
@@ -136,15 +137,16 @@ function Pesquisa(){
                     if (!response.ok) {
                         throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
                     }
+                    alert("Adição de universidade bem sucedida.")
                     return response.json();
                 })
                 .catch((error) => {
-                    console.error('Erro:', error);
+                    alert(`Erro: ${error.message}`)
                 });
             }
         })
         .catch((error) => {
-            console.error('Erro ao tentar adicionar:', error);
+            alert(`Erro ao tentar adicionar: ${error}`);
         });
         
     }
@@ -159,7 +161,7 @@ function Pesquisa(){
             setMostrarSugestoesDocente(false);
         }
         else{
-            console.log("Click não identificado.")
+            alert("Click não identificado.")
         }
     };
 

@@ -32,6 +32,18 @@
         "Tiago Teixeira",
         "Maisa da Silva"
       ]
+    },
+    {
+      "id": "8291",
+      "universidade": "Universidade Estadual de São Paulo",
+      "professores": [
+        "Lucas Silva e Silva"
+      ]
+    },
+    {
+      "id": "4786",
+      "universidade": "Universidade Federal do ABC",
+      "professores": []
     }
   ],
   "avaliacoes": [
