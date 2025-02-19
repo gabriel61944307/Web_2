@@ -83,8 +83,51 @@ function Pesquisa(){
         navigate('/avaliar')
     }
 
-    function adicionarHandler(){
-        console.log('ADICIONOU')
+    const adicionarHandler = async () => {
+        fetch('http://localhost:3000/pesquisa', {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
+        })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Erro ao buscar universidades');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            const objUniversidade = data.find((elemento) => elemento.universidade.trim().toUpperCase() === universidade.trim().toUpperCase())
+            if(objUniversidade){
+                if(!objUniversidade.professores.find(elemento => elemento.trim().toUpperCase() === docente.trim().toUpperCase())){
+                    fetch(`http://localhost:3000/pesquisa/${objUniversidade.id}`, {
+                        method: 'PATCH',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({professores: [...objUniversidade.professores, docente]})
+                    }).then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`Erro ao adicionar o professor(a) ${docente} a universidade ${universidade}`);
+                        }
+                        return response.json();
+                    })
+                    .catch((error) => {
+                        console.error(error)
+                    });
+                }
+                else{
+                    console.log(`Professor ${docente} já presente na universidade ${universidade}`)
+                }
+            }
+            else{
+                console.log("AQUI CASO A UNIVERSIDADE NÃO EXISTA")
+            }
+        })
+        .catch((error) => {
+            console.error('Erro ao tentar adicionar:', error);
+        });
+        
     }
 
     const handleSugestaoClick = (nome, type) => {
