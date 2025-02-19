@@ -5,7 +5,8 @@
       "universidade": "Universidade Federal de São Carlos",
       "professores": [
         "Miyagi",
-        "Gabriel Rodrigues Malaquias"
+        "Gabriel Rodrigues Malaquias",
+        "Alberto Medeiros"
       ]
     },
     {
@@ -15,6 +16,21 @@
         "Miyagi",
         "Joaquina Almeida",
         "Alberto Medeiros"
+      ]
+    },
+    {
+      "id": "81b3",
+      "universidade": "Universidade Federal de Uberlândia",
+      "professores": [
+        "Jamile Pereira"
+      ]
+    },
+    {
+      "id": "0537",
+      "universidade": "Universidade Federal de Maricá",
+      "professores": [
+        "Tiago Teixeira",
+        "Maisa da Silva"
       ]
     }
   ],

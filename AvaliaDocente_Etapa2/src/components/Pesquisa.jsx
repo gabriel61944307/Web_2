@@ -99,7 +99,7 @@ function Pesquisa(){
         .then((data) => {
             const objUniversidade = data.find((elemento) => elemento.universidade.trim().toUpperCase() === universidade.trim().toUpperCase())
             if(objUniversidade){
-                if(!objUniversidade.professores.find(elemento => elemento.trim().toUpperCase() === docente.trim().toUpperCase())){
+                if(docente && !objUniversidade.professores.find(elemento => elemento.trim().toUpperCase() === docente.trim().toUpperCase())){
                     fetch(`http://localhost:3000/pesquisa/${objUniversidade.id}`, {
                         method: 'PATCH',
                         headers: {
@@ -121,7 +121,26 @@ function Pesquisa(){
                 }
             }
             else{
-                console.log("AQUI CASO A UNIVERSIDADE NÃO EXISTA")
+                const listaDocentes = docente ? [docente] : []
+                fetch('http://localhost:3000/pesquisa', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        "universidade" : universidade,
+                        "professores" : listaDocentes
+                    }) // Converte o objeto para JSON
+                })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
+                    }
+                    return response.json();
+                })
+                .catch((error) => {
+                    console.error('Erro:', error);
+                });
             }
         })
         .catch((error) => {
