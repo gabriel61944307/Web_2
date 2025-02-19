@@ -4,7 +4,7 @@ import starSolid from '../assets/star-solid.svg'
 import simImg from '../assets/sim.png'
 import naoImg from '../assets/nao.png'
 
-function FormAvaliacao() {
+function FormAvaliacao({ universidade, docente }) {
   // Estado para controlar a seleção de estrelas
   const [estrelas, setEstrelas] = useState({
     didatica: 0,
@@ -64,7 +64,7 @@ function FormAvaliacao() {
   return (
     <div className="flexCentralizado" style={{ flexDirection: 'column' }}>
       <a style={{ padding: '20px', fontWeight: 'bold', fontSize: 'large' }}>
-        Avaliando o professor Miyagi
+        Avaliando o professor {docente}
       </a>
 
       <div id="forms-avaliacao">

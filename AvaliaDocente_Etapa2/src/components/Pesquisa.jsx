@@ -76,11 +76,11 @@ function Pesquisa(){
     }, [universidade, docente, mostrarSugestoesDocente])
 
     function avaliacoesHandler(){
-        navigate('/avaliacoes')
+        navigate('/avaliacoes', {state: {universidade, docente}});
     }
 
     function avaliarHandler(){
-        navigate('/avaliar')
+        navigate('/avaliar', {state: {universidade, docente}});
     }
 
     const adicionarHandler = async () => {
