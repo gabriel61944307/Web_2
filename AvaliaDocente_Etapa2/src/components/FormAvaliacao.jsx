@@ -1,8 +1,9 @@
-import {useState} from 'react';
+import {useState, useRef} from 'react';
 import starRegular from '../assets/star-regular.svg'
 import starSolid from '../assets/star-solid.svg'
 import simImg from '../assets/sim.png'
 import naoImg from '../assets/nao.png'
+import PropTypes from 'prop-types'
 
 function FormAvaliacao({ universidade, docente }) {
   // Estado para controlar a seleção de estrelas
@@ -15,7 +16,11 @@ function FormAvaliacao({ universidade, docente }) {
   });
 
   // Estado para controlar a seleção de "Sim" ou "Não"
-  const [cobraPresenca, setCobraPresenca] = useState(null);
+  const [cobraPresenca, setCobraPresenca] = useState(true);
+
+  //Referencias diretas para os textareas
+  const comentarioRef = useRef(null);
+  const materiasRef = useRef(null);
 
   // Função para lidar com o clique nas estrelas
   const handleEstrelaClick = (categoria, index) => {
@@ -61,6 +66,33 @@ function FormAvaliacao({ universidade, docente }) {
     );
   };
 
+  const enviarHandler = () => {
+    fetch('http://localhost:3000/avaliacoes', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          "nome" : docente,
+          "universidade" : universidade,
+          "avaliacao" : estrelas,
+          "presenca" : cobraPresenca,
+          "comentario": comentarioRef.current.value,
+          "materias": materiasRef.current.value ? materiasRef.current.value.split('\n') : []
+      })
+    })
+    .then((response) => {
+        if (!response.ok) {
+            throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
+        }
+        return response.json();
+    })
+    .catch((error) => {
+        console.error('Erro:', error);
+    });
+
+  }
+
   return (
     <div className="flexCentralizado" style={{ flexDirection: 'column' }}>
       <a style={{ padding: '20px', fontWeight: 'bold', fontSize: 'large' }}>
@@ -95,11 +127,13 @@ function FormAvaliacao({ universidade, docente }) {
           name="comentario"
           id="comentario"
           placeholder="Avaliação do professor"
+          ref={comentarioRef}
         ></textarea>
         <textarea
           name="add-disciplina"
           id="add-disciplina"
-          placeholder="Adicionar disciplinas ao professor (1 por linha)"
+          placeholder="Matéria ministrada (1 por linha)"
+          ref={materiasRef}
         ></textarea>
       </div>
 
@@ -107,12 +141,17 @@ function FormAvaliacao({ universidade, docente }) {
       <button
         type="button"
         className="custom-button"
-        onClick={() => window.location.reload()} // Recarrega a página
+        onClick={() => {enviarHandler(); window.location.reload();}} // Recarrega a página
       >
         Enviar
       </button>
     </div>
   );
+}
+
+FormAvaliacao.propTypes = {
+  universidade: PropTypes.string.isRequired,
+  docente: PropTypes.string.isRequired,
 }
 
 export default FormAvaliacao;

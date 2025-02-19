@@ -47,7 +47,11 @@
       },
       "presenca": true,
       "comentario": "Então, sobre o professor Miyagi, eu acho que ele manda muito bem na explicação. Ele tem uma didática ótima, sempre consegue deixar as coisas claras, mesmo quando o assunto é complicado. Dá pra perceber que ele entende muito do conteúdo e realmente se esforça pra passar isso pra gente. Mas, ao mesmo tempo, eu acho que ele poderia melhorar na parte de correção das provas. Às vezes, parece que os critérios não são tão claros, e isso deixa a gente meio perdido. Já aconteceu de respostas super parecidas serem avaliadas de forma diferente, sabe? Isso acaba desmotivando um pouco.No geral, acho que ele é um ótimo professor, mas esse ponto das correções deixa um pouco a desejar. Se ele ajustasse isso, seria perfeito!",
-      "id": "ac03"
+      "materias": [
+        "Matematica",
+        "Geografia"
+      ],
+      "id": "1"
     },
     {
       "nome": "Miyagi",
@@ -61,7 +65,11 @@
       },
       "presenca": false,
       "comentario": "Ruim demais!!!",
-      "id": "5154"
+      "materias": [
+        "História da computação",
+        "Matematica discreta"
+      ],
+      "id": "2"
     },
     {
       "nome": "Gabriel Rodrigues Malaquias",
@@ -75,7 +83,110 @@
       },
       "presenca": false,
       "comentario": "Muito bom no geral, mas muito caneteiro.",
-      "id": "8eeb"
+      "materias": [
+        "Mecânica dos fluidos",
+        "Algoritmos e Estruturas de dados 2"
+      ],
+      "id": "3"
+    },
+    {
+      "id": "124e",
+      "nome": "Joaquina Almeida",
+      "universidade": "Universidade Federal do Paraná",
+      "avaliacao": {
+        "didatica": 4,
+        "tirarDuvidas": 5,
+        "metodologia": 1,
+        "conteudo": 1,
+        "correcao": 3
+      },
+      "presenca": true,
+      "comentario": "Boa didatica e sempre disposta a tirar duvidas, mas impossível de passar se não estiver acostumado com sua metodologia.",
+      "materias": [
+        "Genética evolucionista"
+      ]
+    },
+    {
+      "id": "4507",
+      "nome": "Gabriel Rodrigues Malaquias",
+      "universidade": "Universidade Federal de São Carlos",
+      "avaliacao": {
+        "didatica": 1,
+        "tirarDuvidas": 1,
+        "metodologia": 1,
+        "conteudo": 1,
+        "correcao": 1
+      },
+      "presenca": true,
+      "comentario": "Não sei como pode existir alguém tão ruim em ensinar algo que domina.",
+      "materias": [
+        "Sistemas Operacionais",
+        "Sistemas Oblíquos"
+      ]
+    },
+    {
+      "id": "1a93",
+      "nome": "Gabriel Rodrigues Malaquias",
+      "universidade": "Universidade Federal de São Carlos",
+      "avaliacao": {
+        "didatica": 5,
+        "tirarDuvidas": 5,
+        "metodologia": 0,
+        "conteudo": 5,
+        "correcao": 5
+      },
+      "presenca": true,
+      "comentario": "Professor ótimo em todos os quesitos, exceto quando se trata de suas avaliações. Só da prova e não oferece uma sub sequer.",
+      "materias": [
+        "Sistemas Oblíquos"
+      ]
+    },
+    {
+      "id": "35e3",
+      "nome": "Tiago Teixeira",
+      "universidade": "Universidade Federal de Maricá",
+      "avaliacao": {
+        "didatica": 3,
+        "tirarDuvidas": 3,
+        "metodologia": 3,
+        "conteudo": 3,
+        "correcao": 3
+      },
+      "presenca": false,
+      "comentario": "Não deixa a desejar em nada, mas também não surpreende, apenas na presença que ainda bem que não cobrava.",
+      "materias": [
+        "Devops"
+      ]
+    },
+    {
+      "id": "b06e",
+      "nome": "Tiago Teixeira",
+      "universidade": "Universidade Federal de Maricá",
+      "avaliacao": {
+        "didatica": 5,
+        "tirarDuvidas": 4,
+        "metodologia": 3,
+        "conteudo": 2,
+        "correcao": 1
+      },
+      "presenca": true,
+      "comentario": "Só quis fazer uma escadinha com as notas dele mesmo.",
+      "materias": []
+    },
+    {
+      "id": "82c1",
+      "nome": "Tiago Teixeira",
+      "universidade": "Universidade Federal de Maricá",
+      "avaliacao": {
+        "didatica": 1,
+        "tirarDuvidas": 2,
+        "metodologia": 3,
+        "conteudo": 4,
+        "correcao": 5
+      },
+      "presenca": false,
+      "comentario": "Escadinha inversa pra testar os valores sem matérias ministradas",
+      "materias": []
     }
   ]
 }
