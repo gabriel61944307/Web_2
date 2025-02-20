@@ -169,26 +169,31 @@ function Pesquisa(){
             }
             else{
                 const listaDocentes = docente ? [docente] : []
-                fetch('http://localhost:3000/pesquisa', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        "universidade" : universidade,
-                        "professores" : listaDocentes
-                    }) // Converte o objeto para JSON
-                })
-                .then((response) => {
-                    if (!response.ok) {
-                        throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
-                    }
-                    alert("Adição de universidade bem sucedida.")
-                    return response.json();
-                })
-                .catch((error) => {
-                    alert(`Erro: ${error.message}`)
-                });
+                if (universidade !== ""){
+                    fetch('http://localhost:3000/pesquisa', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            "universidade" : universidade,
+                            "professores" : listaDocentes
+                        }) // Converte o objeto para JSON
+                    })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error(`Erro ao adicionar nova universidade ${universidade} e professor ${docente}`);
+                        }
+                        alert("Adição de universidade bem sucedida.")
+                        return response.json();
+                    })
+                    .catch((error) => {
+                        alert(`Erro: ${error.message}`)
+                    });
+                }
+                else{
+                    alert("Preencha o campo universidade.")
+                }
             }
         })
         .catch((error) => {
