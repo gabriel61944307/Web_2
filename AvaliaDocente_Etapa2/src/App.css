@@ -306,6 +306,26 @@ textarea {
   .sugestao-item:last-child {
     border-bottom: none; /* Remove a borda do último item */
   }
+  .filhoHistorico {
+    width: 50vw;  /* Defina a largura desejada */
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    margin: 1px;
+    padding: 1px;
+    overflow-y: auto;
+}
+
+.paiHistorico {
+    width: 40vw;  /* Defina a largura do pai */
+    background-color: white;
+    margin-bottom: 5px;
+    position: absolute;
+    z-index: 2000;
+    top: 50px;
+    right: 10px;
+    overflow-y: auto;
+}
 
 @media (max-width: 680px){
     .button-group{
@@ -338,6 +358,13 @@ textarea {
 
     .comentario-individual{
         font-size: medium;
+    }
+
+    .filhoHistorico{
+        width: 45vw !important;
+    }
+    .paiHistorico{
+        width: 90vw !important; 
     }
 }
 

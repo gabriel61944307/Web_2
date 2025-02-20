@@ -216,6 +216,57 @@
       "materias": [
         "Geografia dimensional"
       ]
+    },
+    {
+      "id": "9ef3",
+      "nome": "Jamile Pereira",
+      "universidade": "Universidade Federal de Uberlândia",
+      "avaliacao": {
+        "didatica": 4,
+        "tirarDuvidas": 4,
+        "metodologia": 3,
+        "conteudo": 4,
+        "correcao": 3
+      },
+      "presenca": true,
+      "comentario": "A professora Jamile Pereira é uma profissional excepcional, cujo comprometimento e paixão pelo ensino são verdadeiramente inspiradores. Com uma abordagem única e sempre atenta às necessidades de cada aluno, ela consegue transformar cada aula em uma experiência enriquecedora. Sua paciência, competência e entusiasmo são visíveis em cada interação, criando um ambiente de aprendizado acolhedor e motivador. Ela não apenas transmite conhecimento, mas também incentiva o desenvolvimento de habilidades críticas e a curiosidade intelectual de seus alunos.",
+      "materias": [
+        "Geografia da terra oca"
+      ]
+    },
+    {
+      "id": "4ae0",
+      "nome": "Miyagi",
+      "universidade": "Universidade Federal de São Carlos",
+      "avaliacao": {
+        "didatica": 4,
+        "tirarDuvidas": 3,
+        "metodologia": 4,
+        "conteudo": 5,
+        "correcao": 3
+      },
+      "presenca": true,
+      "comentario": "Um mestre no que faz, só não entendo a obsessão dele ao fazer os alunos pintar a cerca da casa dele.",
+      "materias": [
+        "História do karate"
+      ]
+    },
+    {
+      "id": "76c0",
+      "nome": "Miyagi",
+      "universidade": "Universidade Federal de São Carlos",
+      "avaliacao": {
+        "didatica": 3,
+        "tirarDuvidas": 4,
+        "metodologia": 4,
+        "conteudo": 2,
+        "correcao": 2
+      },
+      "presenca": false,
+      "comentario": "Parece estar dormindo em sala, sei que ele deve estar fazendo o melhor que pode, mas de vez em quando é frustrante tentar prestar atenção nele quase dormindo",
+      "materias": [
+        "Tecnologia do sono"
+      ]
     }
   ]
 }

@@ -81,6 +81,20 @@ function FormAvaliacao({ universidade, docente }) {
     })
     .then((data) => {
       if (data.find( elemento => elemento.universidade === universidade && elemento.professores.includes(docente))){
+        if (typeof(Storage) !== "undefined") {
+          let historicoAvaliacoes = JSON.parse(localStorage.getItem("avaliacoes")) || [];
+          historicoAvaliacoes.push({
+            "nome" : docente,
+            "universidade" : universidade,
+            "avaliacao" : estrelas,
+            "presenca" : cobraPresenca,
+            "comentario": comentarioRef.current.value,
+            "materias": materiasRef.current.value ? materiasRef.current.value.split('\n') : []
+          })
+
+          localStorage.setItem("avaliacoes", JSON.stringify(historicoAvaliacoes));
+        }
+
         fetch('http://localhost:3000/avaliacoes', {
           method: 'POST',
           headers: {
