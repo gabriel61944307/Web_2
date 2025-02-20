@@ -228,6 +228,7 @@ textarea {
 #avaliacoes-individuais{
     display: flex;
     justify-content: center;
+    justify-content: start;
     flex-wrap: wrap;
     width: 70vw;
     gap: 0px 20px;

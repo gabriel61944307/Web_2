@@ -9,18 +9,19 @@ function Avaliacoes(){
     //Informações necessárias para o fetching
     const location = useLocation();
     const { universidade, docente } = location.state || {};
-    const [avaliacoes, setAvaliacoes] = useState(null);
+    const [avaliacoes, setAvaliacoes] = useState([]);
     const [erro, setErro] = useState(null);
     const [infosGerais, setInfosGerais] = useState({
-        "didatica": null,
-        "tirarDuvidas": null,
-        "metodologia": null,
-        "conteudo": null,
-        "correcao": null,
-        "presencaSim": null,
-        "presencaNao": null,
+        "didatica": 0,
+        "tirarDuvidas": 0,
+        "metodologia": 0,
+        "conteudo": 0,
+        "correcao": 0,
+        "presencaSim": 0,
+        "presencaNao": 0,
         "materias": []
     });
+    const [filtro, setFiltro] = useState([true, false, false])
 
     useEffect(() => {
         try{
@@ -55,11 +56,12 @@ function Avaliacoes(){
                         })
                     }
                 })
-                mediaDidatica = mediaDidatica / data.length
-                mediaTirarDuvidas = mediaTirarDuvidas / data.length
-                mediaMetodologia = mediaMetodologia / data.length
-                mediaConteudo = mediaConteudo / data.length
-                mediaCorrecao = mediaCorrecao / data.length
+                
+                mediaDidatica = data.length ? mediaDidatica / data.length : 0
+                mediaTirarDuvidas = data.length ? mediaTirarDuvidas / data.length : 0
+                mediaMetodologia = data.length ? mediaMetodologia / data.length : 0
+                mediaConteudo = data.length ? mediaConteudo / data.length : 0
+                mediaCorrecao = data.length ? mediaCorrecao / data.length : 0
 
                 setInfosGerais({
                     "didatica": mediaDidatica,
@@ -96,31 +98,31 @@ function Avaliacoes(){
                         <div className="avaliacao">
                             <span className="titulo-nota">Didática</span>
                             <div className="container-barra">
-                                <div className="barra-verde" style={{width: "100%"}}>{infosGerais.didatica}</div>
+                                <div className="barra-verde" style={{width: String(infosGerais.didatica*20)+"%"}}>{infosGerais.didatica.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Disposição em tirar duvidas</span>
                             <div className="container-barra">
-                                <div className="barra-vermelha" style={{width: "14%"}}>{infosGerais.tirarDuvidas}</div>
+                                <div className="barra-vermelha" style={{width: String(infosGerais.tirarDuvidas*20)+"%"}}>{infosGerais.tirarDuvidas.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Metodologia de avaliações</span>
                             <div className="container-barra">
-                                <div className="barra-vermelha" style={{width: "46%"}}>{infosGerais.metodologia}</div>
+                                <div className="barra-vermelha" style={{width: String(infosGerais.metodologia*20)+"%"}}>{infosGerais.metodologia.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Coerência com conteúdo cobrado</span>
                             <div className="container-barra">
-                                <div className="barra-verde" style={{width: "80%"}}>{infosGerais.conteudo}</div>
+                                <div className="barra-verde" style={{width: String(infosGerais.conteudo*20)+"%"}}>{infosGerais.conteudo.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Coerência na correção</span>
                             <div className="container-barra">
-                                <div className="barra-vermelha" style={{width: "40%"}}>{infosGerais.correcao}</div>
+                                <div className="barra-vermelha" style={{width: String(infosGerais.correcao*20)+"%"}}>{infosGerais.correcao.toFixed(2)}</div>
                             </div>
                         </div>
                     </div>
@@ -148,45 +150,51 @@ function Avaliacoes(){
                         <div id="filtro-positivas">Positivas</div>
                         <div id="filtro-negativas">Negativas</div>
                     </div>
-                    <div className="avaliacao-individual">
-                        <div className="avaliacao-geral" style={{padding: "5px"}}>
-                            <div className="avaliacao">
-                                <span className="titulo-nota">Didática</span>
-                                <div className="container-barra">
-                                    <div className="barra-verde" style={{width: "80%"}}>4.0</div>
+                    {
+                        avaliacoes.map(elemento =>{
+                            return (
+                            <div key={elemento.id} className="avaliacao-individual">
+                                <div className="avaliacao-geral" style={{padding: "5px"}}>
+                                    <div className="avaliacao">
+                                        <span className="titulo-nota">Didática</span>
+                                        <div className="container-barra">
+                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.didatica*20)+"%"}}>{elemento.avaliacao.didatica}</div>
+                                        </div>
+                                    </div>
+                                    <div className="avaliacao">
+                                        <span className="titulo-nota">Disposição em tirar duvidas</span>
+                                        <div className="container-barra">
+                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.tirarDuvidas*20)+"%"}}>{elemento.avaliacao.tirarDuvidas}</div>
+                                        </div>
+                                    </div>
+                                    <div className="avaliacao">
+                                        <span className="titulo-nota">Metodologia de avaliações</span>
+                                        <div className="container-barra">
+                                            <div className="barra-vermelha" style={{width: String(elemento.avaliacao.metodologia*20)+"%"}}>{elemento.avaliacao.metodologia}</div>
+                                        </div>
+                                    </div>
+                                    <div className="avaliacao">
+                                        <span className="titulo-nota">Coerência com conteúdo cobrado</span>
+                                        <div className="container-barra">
+                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.conteudo*20)+"%"}}>{elemento.avaliacao.conteudo}</div>
+                                        </div>
+                                    </div>
+                                    <div className="avaliacao">
+                                        <span className="titulo-nota">Coerência na correção</span>
+                                        <div className="container-barra">
+                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.correcao*20)+"%"}}>{elemento.avaliacao.correcao}</div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="avaliacao">
-                                <span className="titulo-nota">Disposição em tirar duvidas</span>
-                                <div className="container-barra">
-                                    <div className="barra-verde" style={{width: "60%"}}>3.0</div>
+                                <div className="comentario-individual">
+                                    <p>{elemento.comentario}</p>
+                                    {elemento.materias.map((materia, index) => (
+                                        <span key={index} style={{fontWeight:"bold"}}>{materia}<br /></span>
+                                    ))}
                                 </div>
-                            </div>
-                            <div className="avaliacao">
-                                <span className="titulo-nota">Metodologia de avaliações</span>
-                                <div className="container-barra">
-                                    <div className="barra-vermelha" style={{width: "20%"}}>1.0</div>
-                                </div>
-                            </div>
-                            <div className="avaliacao">
-                                <span className="titulo-nota">Coerência com conteúdo cobrado</span>
-                                <div className="container-barra">
-                                    <div className="barra-verde" style={{width: "80%"}}>4.0</div>
-                                </div>
-                            </div>
-                            <div className="avaliacao">
-                                <span className="titulo-nota">Coerência na correção</span>
-                                <div className="container-barra">
-                                    <div className="barra-verde" style={{width: "100%"}}>5.0</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="comentario-individual">
-                            Então, sobre o professor Miyagi, eu acho que ele manda muito bem na explicação. Ele tem uma didática ótima, sempre consegue deixar as coisas claras, mesmo quando o assunto é complicado. Dá pra perceber que ele entende muito do conteúdo e realmente se esforça pra passar isso pra gente.
-                            Mas, ao mesmo tempo, eu acho que ele poderia melhorar na parte de correção das provas. Às vezes, parece que os critérios não são tão claros, e isso deixa a gente meio perdido. Já aconteceu de respostas super parecidas serem avaliadas de forma diferente, sabe? Isso acaba desmotivando um pouco.
-                            No geral, acho que ele é um ótimo professor, mas esse ponto das correções deixa um pouco a desejar. Se ele ajustasse isso, seria perfeito!
-                        </div>
-                    </div>
+                            </div>)
+                        })
+                    }
                 </div>
             </div>
         </>
