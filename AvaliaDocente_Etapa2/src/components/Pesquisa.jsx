@@ -11,6 +11,17 @@ function Pesquisa(){
     const [sugestoesDocente, setSugestoesDocentes] = useState([]);
     const [mostrarSugestoesDocente, setMostrarSugestoesDocente] = useState(false);
 
+    const [lembrarPesquisa, setLembrarPesquisa] = useState(false)
+
+    useEffect(() => {
+        const ultimaPesquisa = JSON.parse(localStorage.getItem("ultimaPesquisa"));
+        if (ultimaPesquisa) {
+            setUniversidade(ultimaPesquisa.memoryUniversidade);
+            setDocente(ultimaPesquisa.memoryDocente);
+            setLembrarPesquisa(true);
+        }
+    }, []);
+
     // Função para buscar sugestões da API
     useEffect(() => {
         if (universidade.trim() === '' || !mostrarSugestoesUniversidade) {
@@ -76,6 +87,12 @@ function Pesquisa(){
     }, [universidade, docente, mostrarSugestoesDocente])
 
     function avaliacoesHandler(){
+        if (lembrarPesquisa){
+            localStorage.setItem("ultimaPesquisa", JSON.stringify({"memoryUniversidade": universidade, "memoryDocente": docente}))
+        }
+        else{
+            localStorage.removeItem("ultimaPesquisa")
+        }
         fetch('http://localhost:3000/pesquisa', {
             method: 'GET',
             headers: {
@@ -103,6 +120,12 @@ function Pesquisa(){
     }
 
     function avaliarHandler(){
+        if (lembrarPesquisa){
+            localStorage.setItem("ultimaPesquisa", JSON.stringify({"memoryUniversidade": universidade, "memoryDocente": docente}))
+        }
+        else{
+            localStorage.removeItem("ultimaPesquisa")
+        }
         fetch('http://localhost:3000/pesquisa', {
             method: 'GET',
             headers: {
@@ -216,6 +239,10 @@ function Pesquisa(){
         }
     };
 
+    const handleCheckboxChange = (e) => {
+        setLembrarPesquisa(e.target.checked);
+    };
+
     return(
         <div className="container-pesquisa">
             <div className="input-container">
@@ -263,7 +290,7 @@ function Pesquisa(){
                     </ul>
                 )}
             </div>
-
+            <label><input type="checkbox" checked={lembrarPesquisa} onChange={handleCheckboxChange}/> Lembrar minha pesquisa</label>
             <div className="button-group">
                 <button type="button" onClick={avaliacoesHandler} className="custom-button">Avaliações</button>
                 <button type="button" onClick={avaliarHandler} className="custom-button">Avaliar</button>
