@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import menuOpen from '../assets/menu-historico-open.svg'
+import menuClosed from '../assets/menu-historico-closed.svg'
 
 function HistoricoAvaliacoes() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +18,9 @@ function HistoricoAvaliacoes() {
 
   return (
     <div>
-      <button className="historico-button" onClick={handleBtnClick} style={{position: "fixed", top: "10px", right: "10px", zIndex:"1000"}}>☰</button>
+        <button className="historico-button" onClick={handleBtnClick} style={{position: "fixed", top: "10px", right: "10px", zIndex:"1000"}}>
+            <img style={{filter: "invert(1)"}} src={isOpen ? menuOpen : menuClosed} alt="" />
+        </button>
       <div className="paiHistorico">
         {isOpen && (
             avaliacoes.map((elemento) => {

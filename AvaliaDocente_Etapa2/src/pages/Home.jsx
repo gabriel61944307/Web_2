@@ -1,5 +1,4 @@
 import Header from "../components/Header"
-import HistoricoAvaliacoes from "../components/HistoricoAvaliacoes"
 import Pesquisa from "../components/Pesquisa"
 
 function Home(){
