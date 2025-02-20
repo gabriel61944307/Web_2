@@ -267,6 +267,23 @@
       "materias": [
         "Tecnologia do sono"
       ]
+    },
+    {
+      "id": "dc37",
+      "nome": "Joaquina Almeida",
+      "universidade": "Universidade Federal do Paraná",
+      "avaliacao": {
+        "didatica": 3,
+        "tirarDuvidas": 0,
+        "metodologia": 4,
+        "conteudo": 2,
+        "correcao": 3
+      },
+      "presenca": true,
+      "comentario": "Testando avaliação sobre a professora Joaquina Almeida",
+      "materias": [
+        "Ministrou"
+      ]
     }
   ]
 }

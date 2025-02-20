@@ -1,8 +1,11 @@
-# React + Vite
+# DESENVOLVIMENTO DE SOFTWARE PARA WEB 2
+Repositório com os códigos referentes a matéria desenvolvimento de sofware para web 2 ministrada pelo Profº Drº Daniel Lucrédio.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Informações do aluno
+Gabriel Rodrigues Malaquias - 758906
 
-Currently, two official plugins are available:
+### Informações da avaliação
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Entrega 2: Front-End de um site de avaliação de professores
+Nessa etapa as 3 telas montadas na etapa anterior foram implementadas utilizando react.
+Utilizei States e Refs para rastrear valores dos campos que o usuário preenche no front-end e também Effects. Utilizei o json-server para simular um banco de dados, as informações de teste do banco estão presentes no arquivo ./data/db.json, a comunicação e verificação de dados foi toda feita no front-end atravez de fetchs.
