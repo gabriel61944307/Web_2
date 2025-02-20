@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 
 function Avaliar(){
     const location = useLocation();
-    const { universidade, docente } = location.state || {}; // Caso não tenha state, evita erro
+    const { universidade, docente } = location.state || {};
     return (
         <>
             <Header/>
