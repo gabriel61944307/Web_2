@@ -71,7 +71,7 @@ function Avaliacoes(){
                     "correcao": mediaCorrecao,
                     "presencaSim": presencaSim,
                     "presencaNao": presencaNao,
-                    "materias": materias
+                    "materias": materias,
                 });
 
                 setAvaliacoes(data);
@@ -85,6 +85,22 @@ function Avaliacoes(){
     }, [docente, universidade]);
 
     if(erro) return <p>Erro: {erro}</p>
+
+    const filtroHandler = (filterType) => {
+        switch (filterType){
+            case "Todas":
+                setFiltro([true, false, false]);
+                break;
+            case "Positivas":
+                setFiltro([false, true, false]);
+                break;
+            case "Negativas":
+                setFiltro([false, false, true]);
+                break;
+            default:
+                throw new Error(`Tipo de filtro selecionado não identificado ${filterType}`)
+        }
+    }
 
     return (
         <>
@@ -146,53 +162,64 @@ function Avaliacoes(){
                 </div>
                 <div id="avaliacoes-individuais">
                     <div id="cabecalho-avaliacoes">
-                        <div id="filtro-todas">Todas</div>
-                        <div id="filtro-positivas">Positivas</div>
-                        <div id="filtro-negativas">Negativas</div>
+                        <div id="filtro-todas" onClick={() => filtroHandler("Todas")}>Todas</div>
+                        <div id="filtro-positivas" onClick={() => filtroHandler("Positivas")}>Positivas</div>
+                        <div id="filtro-negativas" onClick={() => filtroHandler("Negativas")}>Negativas</div>
                     </div>
                     {
                         avaliacoes.map(elemento =>{
-                            return (
-                            <div key={elemento.id} className="avaliacao-individual">
-                                <div className="avaliacao-geral" style={{padding: "5px"}}>
-                                    <div className="avaliacao">
-                                        <span className="titulo-nota">Didática</span>
-                                        <div className="container-barra">
-                                            <div className={elemento.avaliacao.didatica < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.didatica*20)+"%"}}>{elemento.avaliacao.didatica}</div>
+                            const mediaElemento = (
+                                elemento.avaliacao.didatica +
+                                elemento.avaliacao.tirarDuvidas +
+                                elemento.avaliacao.metodologia +
+                                elemento.avaliacao.conteudo +
+                                elemento.avaliacao.correcao
+                            ) / 5;
+
+                            if (filtro[0] || filtro[1] && mediaElemento >= 3 || filtro[2] && mediaElemento < 3){
+                                return (
+                                    <div key={elemento.id} className="avaliacao-individual">
+                                        <div className="avaliacao-geral" style={{padding: "5px"}}>
+                                            <div className="avaliacao">
+                                                <span className="titulo-nota">Didática</span>
+                                                <div className="container-barra">
+                                                    <div className={elemento.avaliacao.didatica < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.didatica*20)+"%"}}>{elemento.avaliacao.didatica}</div>
+                                                </div>
+                                            </div>
+                                            <div className="avaliacao">
+                                                <span className="titulo-nota">Disposição em tirar duvidas</span>
+                                                <div className="container-barra">
+                                                    <div className={elemento.avaliacao.tirarDuvidas < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.tirarDuvidas*20)+"%"}}>{elemento.avaliacao.tirarDuvidas}</div>
+                                                </div>
+                                            </div>
+                                            <div className="avaliacao">
+                                                <span className="titulo-nota">Metodologia de avaliações</span>
+                                                <div className="container-barra">
+                                                    <div className={elemento.avaliacao.metodologia < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.metodologia*20)+"%"}}>{elemento.avaliacao.metodologia}</div>
+                                                </div>
+                                            </div>
+                                            <div className="avaliacao">
+                                                <span className="titulo-nota">Coerência com conteúdo cobrado</span>
+                                                <div className="container-barra">
+                                                    <div className={elemento.avaliacao.conteudo < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.conteudo*20)+"%"}}>{elemento.avaliacao.conteudo}</div>
+                                                </div>
+                                            </div>
+                                            <div className="avaliacao">
+                                                <span className="titulo-nota">Coerência na correção</span>
+                                                <div className="container-barra">
+                                                    <div className={elemento.avaliacao.correcao < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.correcao*20)+"%"}}>{elemento.avaliacao.correcao}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="comentario-individual">
+                                            <p>{elemento.comentario}</p>
+                                            {elemento.materias.map((materia, index) => (
+                                                <span key={index} style={{fontWeight:"bold"}}>{materia}<br /></span>
+                                            ))}
                                         </div>
                                     </div>
-                                    <div className="avaliacao">
-                                        <span className="titulo-nota">Disposição em tirar duvidas</span>
-                                        <div className="container-barra">
-                                            <div className={elemento.avaliacao.tirarDuvidas < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.tirarDuvidas*20)+"%"}}>{elemento.avaliacao.tirarDuvidas}</div>
-                                        </div>
-                                    </div>
-                                    <div className="avaliacao">
-                                        <span className="titulo-nota">Metodologia de avaliações</span>
-                                        <div className="container-barra">
-                                            <div className={elemento.avaliacao.metodologia < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.metodologia*20)+"%"}}>{elemento.avaliacao.metodologia}</div>
-                                        </div>
-                                    </div>
-                                    <div className="avaliacao">
-                                        <span className="titulo-nota">Coerência com conteúdo cobrado</span>
-                                        <div className="container-barra">
-                                            <div className={elemento.avaliacao.conteudo < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.conteudo*20)+"%"}}>{elemento.avaliacao.conteudo}</div>
-                                        </div>
-                                    </div>
-                                    <div className="avaliacao">
-                                        <span className="titulo-nota">Coerência na correção</span>
-                                        <div className="container-barra">
-                                            <div className={elemento.avaliacao.correcao < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.correcao*20)+"%"}}>{elemento.avaliacao.correcao}</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="comentario-individual">
-                                    <p>{elemento.comentario}</p>
-                                    {elemento.materias.map((materia, index) => (
-                                        <span key={index} style={{fontWeight:"bold"}}>{materia}<br /></span>
-                                    ))}
-                                </div>
-                            </div>)
+                                )
+                            }
                         })
                     }
                 </div>
