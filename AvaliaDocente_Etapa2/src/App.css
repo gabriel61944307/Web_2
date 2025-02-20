@@ -355,6 +355,32 @@ textarea {
         flex: 1 1 calc(50% - 10px); /* Ajuste para 2 colunas */
         box-sizing: border-box;
     }
+    .custom-button {
+        width: 90vw;
+    }
+    #avaliacoes-gerais {
+        width: 95vw;
+    }
+    #avaliacoes-individuais {
+        width: 95vw;
+    }
+    #forms-avaliacao {
+        width: 95vw;
+        justify-items: center;
+    }
+    .linhaAvaliacao{
+        width: 100%;
+        font-size: x-large;
+    }
+    #campos-escritos{
+        width: 95vw;
+    }
+    #comentario{
+        font-size: x-large;
+    }
+    #add-disciplina{
+        font-size: x-large;
+    }
 
     .comentario-individual{
         font-size: medium;
