@@ -98,31 +98,31 @@ function Avaliacoes(){
                         <div className="avaliacao">
                             <span className="titulo-nota">Didática</span>
                             <div className="container-barra">
-                                <div className="barra-verde" style={{width: String(infosGerais.didatica*20)+"%"}}>{infosGerais.didatica.toFixed(2)}</div>
+                                <div className={infosGerais.didatica < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(infosGerais.didatica*20)+"%"}}>{infosGerais.didatica.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Disposição em tirar duvidas</span>
                             <div className="container-barra">
-                                <div className="barra-vermelha" style={{width: String(infosGerais.tirarDuvidas*20)+"%"}}>{infosGerais.tirarDuvidas.toFixed(2)}</div>
+                                <div className={infosGerais.tirarDuvidas < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(infosGerais.tirarDuvidas*20)+"%"}}>{infosGerais.tirarDuvidas.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Metodologia de avaliações</span>
                             <div className="container-barra">
-                                <div className="barra-vermelha" style={{width: String(infosGerais.metodologia*20)+"%"}}>{infosGerais.metodologia.toFixed(2)}</div>
+                                <div className={infosGerais.metodologia < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(infosGerais.metodologia*20)+"%"}}>{infosGerais.metodologia.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Coerência com conteúdo cobrado</span>
                             <div className="container-barra">
-                                <div className="barra-verde" style={{width: String(infosGerais.conteudo*20)+"%"}}>{infosGerais.conteudo.toFixed(2)}</div>
+                                <div className={infosGerais.conteudo < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(infosGerais.conteudo*20)+"%"}}>{infosGerais.conteudo.toFixed(2)}</div>
                             </div>
                         </div>
                         <div className="avaliacao">
                             <span className="titulo-nota">Coerência na correção</span>
                             <div className="container-barra">
-                                <div className="barra-vermelha" style={{width: String(infosGerais.correcao*20)+"%"}}>{infosGerais.correcao.toFixed(2)}</div>
+                                <div className={infosGerais.correcao < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(infosGerais.correcao*20)+"%"}}>{infosGerais.correcao.toFixed(2)}</div>
                             </div>
                         </div>
                     </div>
@@ -158,31 +158,31 @@ function Avaliacoes(){
                                     <div className="avaliacao">
                                         <span className="titulo-nota">Didática</span>
                                         <div className="container-barra">
-                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.didatica*20)+"%"}}>{elemento.avaliacao.didatica}</div>
+                                            <div className={elemento.avaliacao.didatica < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.didatica*20)+"%"}}>{elemento.avaliacao.didatica}</div>
                                         </div>
                                     </div>
                                     <div className="avaliacao">
                                         <span className="titulo-nota">Disposição em tirar duvidas</span>
                                         <div className="container-barra">
-                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.tirarDuvidas*20)+"%"}}>{elemento.avaliacao.tirarDuvidas}</div>
+                                            <div className={elemento.avaliacao.tirarDuvidas < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.tirarDuvidas*20)+"%"}}>{elemento.avaliacao.tirarDuvidas}</div>
                                         </div>
                                     </div>
                                     <div className="avaliacao">
                                         <span className="titulo-nota">Metodologia de avaliações</span>
                                         <div className="container-barra">
-                                            <div className="barra-vermelha" style={{width: String(elemento.avaliacao.metodologia*20)+"%"}}>{elemento.avaliacao.metodologia}</div>
+                                            <div className={elemento.avaliacao.metodologia < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.metodologia*20)+"%"}}>{elemento.avaliacao.metodologia}</div>
                                         </div>
                                     </div>
                                     <div className="avaliacao">
                                         <span className="titulo-nota">Coerência com conteúdo cobrado</span>
                                         <div className="container-barra">
-                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.conteudo*20)+"%"}}>{elemento.avaliacao.conteudo}</div>
+                                            <div className={elemento.avaliacao.conteudo < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.conteudo*20)+"%"}}>{elemento.avaliacao.conteudo}</div>
                                         </div>
                                     </div>
                                     <div className="avaliacao">
                                         <span className="titulo-nota">Coerência na correção</span>
                                         <div className="container-barra">
-                                            <div className="barra-verde" style={{width: String(elemento.avaliacao.correcao*20)+"%"}}>{elemento.avaliacao.correcao}</div>
+                                            <div className={elemento.avaliacao.correcao < 3 ? "barra-vermelha" : "barra-verde"} style={{width: String(elemento.avaliacao.correcao*20)+"%"}}>{elemento.avaliacao.correcao}</div>
                                         </div>
                                     </div>
                                 </div>
